@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="classic" data-scheme="light" data-nav="side">
+<head>
+<meta charset="utf-8">
+<title>Roblox Fan Site</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="An unofficial 2018-style Roblox games browser with an Apple-style option.">
+
+<!-- Home Screen / PWA -->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#232527" id="theme-color">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Roblox Fan">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- Classic top bar (hidden in Apple theme) -->
+  <header class="topbar">
+    <div class="topbar-in">
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Menu"></button>
+      <a class="wordmark" href="#/home" aria-label="Home">ROBLOX</a>
+      <nav class="topnav" aria-label="Main">
+        <a href="#/games" data-route="games">Games</a>
+        <a href="https://www.roblox.com/catalog" target="_blank" rel="noopener">Catalog</a>
+        <a href="https://create.roblox.com" target="_blank" rel="noopener">Develop</a>
+        <a href="https://www.roblox.com/upgrades/robux" target="_blank" rel="noopener">Robux</a>
+      </nav>
+      <form class="topsearch" id="topSearch" role="search">
+        <input type="search" id="topSearchInput" placeholder="Search" autocomplete="off" enterkeyhint="search" aria-label="Search games">
+        <button type="submit" aria-label="Search" id="topSearchBtn"></button>
+      </form>
+      <a class="robux" href="#/avatar" title="Your (pretend) Robux"><i id="robuxIcon"></i><span>1,000</span></a>
+      <a class="me" href="#/profile" id="meChip" aria-label="Profile"></a>
+    </div>
+  </header>
+
+  <div class="body">
+    <aside class="sidebar" id="sidebar" aria-label="Sidebar">
+      <div class="side-top">
+        <button class="icon-btn collapse-btn" id="collapseBtn" aria-label="Hide sidebar"></button>
+        <span class="side-title">Roblox</span>
+      </div>
+      <form class="side-search" id="sideSearch" role="search">
+        <i id="sideSearchIcon"></i>
+        <input type="search" id="sideSearchInput" placeholder="Search" autocomplete="off" enterkeyhint="search" aria-label="Search games">
+      </form>
+      <a class="side-user" href="#/profile" id="sideUser"></a>
+      <ul class="side-list" id="sideList"></ul>
+      <div class="side-foot">Unofficial fan project</div>
+    </aside>
+
+    <main id="main">
+      <button class="icon-btn expand-btn" id="expandBtn" aria-label="Show sidebar"></button>
+      <div id="view" aria-live="polite"></div>
+      <footer class="foot">
+        <div class="foot-links">
+          <a href="https://www.roblox.com" target="_blank" rel="noopener">Roblox.com</a>
+          <a href="#/settings">Settings</a>
+          <a href="#/page/about">About</a>
+        </div>
+        <p>Unofficial fan project. Not affiliated with or endorsed by Roblox Corporation. Game data comes from Roblox's public web APIs. <span id="dataStatus"></span></p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Apple iPhone tab bar -->
+  <nav class="tabbar" id="tabbar" aria-label="Tabs"></nav>
+  <div class="scrim" id="scrim"></div>
+  <div id="toast" role="status"></div>
+  <div id="a2hs"></div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/snapshot.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
